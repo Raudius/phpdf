@@ -1,6 +1,6 @@
 A mediocre library for modifying PDF files.
 
-## \> Important <
+## ❗ Important ❗
 Be warned that this library is not production ready!
  - **QPDF dependant**  
    To use this library you need to have qpdf installed on your system.
@@ -11,7 +11,7 @@ Be warned that this library is not production ready!
  - **Security**  
    This library directly interfaces with the shell. Do NOT pass along user-defined values to any function on this library.
 
-## How it works
+## 📖 How it works
 
 ### Loading PDFs
 
@@ -58,7 +58,7 @@ $pdf->saveAs('copy2.pdf');
 $pdf->saveAs('copy3.pdf');
 ```
 
-## License
+## 🔓 License
 
 There is no license attached to this code, because I have no desire to claim ownership of it.
 If you wish to use this against your better judgement and require a license, you may use it under any fully permissive license (Beerware, WTFPL, CC0...)
