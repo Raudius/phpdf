@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1653425454">
+  <project timestamp="1653425454">
+    <package name="raudius\phpdf\Operations">
+      <file name="/home/raul/phpdf-tool/src/Operations/Decrypt.php">
+        <class name="raudius\phpdf\Operations\Decrypt" namespace="raudius\phpdf\Operations">
+          <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
+        </class>
+        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="22" type="stmt" count="4"/>
+        <line num="23" type="stmt" count="4"/>
+        <line num="29" type="method" name="perform" visibility="protected" complexity="2" crap="2" count="4"/>
+        <line num="30" type="stmt" count="4"/>
+        <line num="32" type="stmt" count="4"/>
+        <line num="33" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="4"/>
+        <line num="36" type="stmt" count="4"/>
+        <line num="38" type="stmt" count="4"/>
+        <line num="39" type="stmt" count="4"/>
+        <metrics loc="40" ncloc="27" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="11" coveredelements="11"/>
+      </file>
+      <file name="/home/raul/phpdf-tool/src/Operations/Merge.php">
+        <class name="raudius\phpdf\Operations\Merge" namespace="raudius\phpdf\Operations">
+          <metrics complexity="5" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="19" coveredelements="19"/>
+        </class>
+        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
+        <line num="22" type="stmt" count="12"/>
+        <line num="23" type="stmt" count="12"/>
+        <line num="29" type="method" name="perform" visibility="protected" complexity="4" crap="4" count="12"/>
+        <line num="30" type="stmt" count="12"/>
+        <line num="32" type="stmt" count="12"/>
+        <line num="33" type="stmt" count="12"/>
+        <line num="34" type="stmt" count="12"/>
+        <line num="35" type="stmt" count="12"/>
+        <line num="36" type="stmt" count="12"/>
+        <line num="37" type="stmt" count="10"/>
+        <line num="39" type="stmt" count="8"/>
+        <line num="40" type="stmt" count="8"/>
+        <line num="43" type="stmt" count="12"/>
+        <line num="44" type="stmt" count="4"/>
+        <line num="47" type="stmt" count="8"/>
+        <line num="48" type="stmt" count="8"/>
+        <line num="49" type="stmt" count="8"/>
+        <line num="50" type="stmt" count="8"/>
+        <metrics loc="51" ncloc="39" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="17" coveredstatements="17" elements="19" coveredelements="19"/>
+      </file>
+      <file name="/home/raul/phpdf-tool/src/Operations/Operation.php">
+        <class name="raudius\phpdf\Operations\Operation" namespace="raudius\phpdf\Operations">
+          <metrics complexity="2" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
+        </class>
+        <line num="26" type="method" name="execute" visibility="public" complexity="1" crap="1" count="32"/>
+        <line num="27" type="stmt" count="32"/>
+        <line num="28" type="stmt" count="32"/>
+        <line num="29" type="stmt" count="29"/>
+        <metrics loc="31" ncloc="16" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="4" coveredelements="4"/>
+      </file>
+      <file name="/home/raul/phpdf-tool/src/Operations/Overlay.php">
+        <class name="raudius\phpdf\Operations\Overlay" namespace="raudius\phpdf\Operations">
+          <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
+        </class>
+        <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="25" type="stmt" count="2"/>
+        <line num="26" type="stmt" count="2"/>
+        <line num="27" type="stmt" count="2"/>
+        <line num="33" type="method" name="perform" visibility="protected" complexity="2" crap="2" count="2"/>
+        <line num="34" type="stmt" count="2"/>
+        <line num="35" type="stmt" count="2"/>
+        <line num="36" type="stmt" count="2"/>
+        <line num="38" type="stmt" count="2"/>
+        <line num="39" type="stmt" count="2"/>
+        <line num="41" type="stmt" count="2"/>
+        <line num="42" type="stmt" count="2"/>
+        <metrics loc="43" ncloc="28" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="12" coveredelements="12"/>
+      </file>
+      <file name="/home/raul/phpdf-tool/src/Operations/Trim.php">
+        <class name="raudius\phpdf\Operations\Trim" namespace="raudius\phpdf\Operations">
+          <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+        </class>
+        <line num="21" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="14"/>
+        <line num="22" type="stmt" count="14"/>
+        <line num="23" type="stmt" count="14"/>
+        <line num="29" type="method" name="perform" visibility="protected" complexity="1" crap="1" count="14"/>
+        <line num="30" type="stmt" count="14"/>
+        <line num="31" type="stmt" count="11"/>
+        <metrics loc="32" ncloc="19" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+      </file>
+    </package>
+    <file name="/home/raul/phpdf-tool/src/Pages.php">
+      <line num="15" type="stmt" count="3"/>
+      <line num="16" type="stmt" count="3"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="2"/>
+      <line num="20" type="stmt" count="2"/>
+      <line num="21" type="stmt" count="2"/>
+      <line num="22" type="stmt" count="2"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="24" type="stmt" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="38" type="stmt" count="3"/>
+      <line num="39" type="stmt" count="1"/>
+      <line num="42" type="stmt" count="3"/>
+      <line num="45" type="stmt" count="2"/>
+      <line num="47" type="stmt" count="2"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="50" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="2"/>
+      <line num="52" type="stmt" count="2"/>
+      <line num="55" type="stmt" count="2"/>
+      <line num="56" type="stmt" count="3"/>
+      <metrics loc="57" ncloc="45" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="21" coveredelements="21"/>
+    </file>
+    <package name="raudius\phpdf">
+      <file name="/home/raul/phpdf-tool/src/Phpdf.php">
+        <class name="raudius\phpdf\Phpdf" namespace="raudius\phpdf">
+          <metrics complexity="12" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="31" coveredelements="31"/>
+        </class>
+        <line num="12" type="method" name="__construct" visibility="private" complexity="1" crap="1" count="55"/>
+        <line num="13" type="stmt" count="55"/>
+        <line num="14" type="stmt" count="55"/>
+        <line num="23" type="method" name="create" visibility="public" complexity="2" crap="2" count="5"/>
+        <line num="24" type="stmt" count="5"/>
+        <line num="25" type="stmt" count="5"/>
+        <line num="27" type="stmt" count="5"/>
+        <line num="28" type="stmt" count="5"/>
+        <line num="29" type="stmt" count="5"/>
+        <line num="42" type="method" name="fopen" visibility="public" complexity="6" crap="6" count="55"/>
+        <line num="43" type="stmt" count="55"/>
+        <line num="44" type="stmt" count="55"/>
+        <line num="45" type="stmt" count="55"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="50" type="stmt" count="54"/>
+        <line num="51" type="stmt" count="46"/>
+        <line num="52" type="stmt" count="46"/>
+        <line num="53" type="stmt" count="4"/>
+        <line num="56" type="stmt" count="46"/>
+        <line num="57" type="stmt" count="46"/>
+        <line num="59" type="stmt" count="46"/>
+        <line num="60" type="stmt" count="46"/>
+        <line num="63" type="stmt" count="54"/>
+        <line num="72" type="method" name="saveAs" visibility="public" complexity="1" crap="1" count="8"/>
+        <line num="73" type="stmt" count="8"/>
+        <line num="81" type="method" name="fclose" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="82" type="stmt" count="4"/>
+        <line num="83" type="stmt" count="4"/>
+        <line num="92" type="method" name="getPath" visibility="public" complexity="1" crap="1" count="51"/>
+        <line num="93" type="stmt" count="51"/>
+        <line num="94" type="stmt" count="47"/>
+        <metrics loc="96" ncloc="57" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="31" coveredelements="31"/>
+      </file>
+      <file name="/home/raul/phpdf-tool/src/PhpdfException.php">
+        <class name="raudius\phpdf\PhpdfException" namespace="raudius\phpdf">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="8" ncloc="8" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <file name="/home/raul/phpdf-tool/src/Util.php">
+      <line num="14" type="stmt" count="44"/>
+      <line num="15" type="stmt" count="44"/>
+      <line num="18" type="stmt" count="44"/>
+      <line num="19" type="stmt" count="10"/>
+      <line num="20" type="stmt" count="10"/>
+      <line num="21" type="stmt" count="39"/>
+      <line num="22" type="stmt" count="44"/>
+      <line num="25" type="stmt" count="39"/>
+      <line num="30" type="stmt" count="5"/>
+      <line num="31" type="stmt" count="0"/>
+      <line num="32" type="stmt" count="0"/>
+      <line num="58" type="stmt" count="30"/>
+      <line num="59" type="stmt" count="30"/>
+      <line num="60" type="stmt" count="1"/>
+      <line num="63" type="stmt" count="30"/>
+      <line num="64" type="stmt" count="29"/>
+      <line num="65" type="stmt" count="29"/>
+      <line num="67" type="stmt" count="1"/>
+      <line num="69" type="stmt" count="1"/>
+      <line num="74" type="stmt" count="6"/>
+      <line num="75" type="stmt" count="5"/>
+      <line num="76" type="stmt" count="2"/>
+      <line num="77" type="stmt" count="2"/>
+      <line num="83" type="stmt" count="1"/>
+      <line num="84" type="stmt" count="0"/>
+      <line num="85" type="stmt" count="0"/>
+      <line num="87" type="stmt" count="1"/>
+      <line num="92" type="stmt" count="4"/>
+      <line num="93" type="stmt" count="4"/>
+      <line num="94" type="stmt" count="4"/>
+      <line num="96" type="stmt" count="2"/>
+      <metrics loc="97" ncloc="84" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="31" coveredstatements="27" elements="31" coveredelements="27"/>
+    </file>
+    <metrics files="9" loc="455" ncloc="323" classes="6" methods="15" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="120" coveredstatements="116" elements="135" coveredelements="131"/>
+  </project>
+</coverage>
