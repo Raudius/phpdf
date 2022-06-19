@@ -5,6 +5,8 @@ namespace raudius\phpdf;
 class Phpdf {
     /** @var resource */
     private $file;
+    /** @var string|null */
+    private static $tempDirectory;
 
     /**
      * @param resource $file
@@ -24,7 +26,7 @@ class Phpdf {
         if (!$data) {
             $data = pdfStub();
         }
-        $file = tmpfile();
+        $file = static::createTempFile();
         fwrite($file, $data);
         return new self($file);
     }
@@ -48,7 +50,7 @@ class Phpdf {
         }
 
         if (!$overwrite) {
-            $tmp = tmpfile();
+            $tmp = static::createTempFile();
             if (!$tmp) {
                 throw new PhpdfException('Could not create temporary file.');
             }
@@ -92,5 +94,27 @@ class Phpdf {
     public function getPath(): string {
         $meta_data = stream_get_meta_data($this->file);
         return $meta_data["uri"];
+    }
+
+    /**
+     * @return resource
+     */
+    private static function createTempFile() {
+        $temp_dir = static::$tempDirectory ?? sys_get_temp_dir();
+        $filename = tempnam($temp_dir, 'phpdf_');
+
+        if (!$filename) {
+            throw new PhpdfException("Could not create a temporary file.");
+        }
+
+        return fopen($filename, 'wb');
+    }
+
+    /**
+     * @param string $path
+     * @return void
+     */
+    public static function setTempDirectory(string $path): void {
+        static::$tempDirectory = $path;
     }
 }

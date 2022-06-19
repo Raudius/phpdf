@@ -1,7 +1,7 @@
 {
     "name": "raudius/phpdf",
     "description": "Another mediocre PHP library to modify PDFs.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": ["pdf", "qpdf", "tool"],
     "require": {
         "php": "^7.2",
