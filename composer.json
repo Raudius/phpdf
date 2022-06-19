@@ -3,6 +3,7 @@
     "description": "Another mediocre PHP library to modify PDFs.",
     "version": "1.0.1",
     "keywords": ["pdf", "qpdf", "tool"],
+    "license": "CC0-1.0",
     "require": {
         "php": "^7.2",
         "mrrio/shellwrap": "^0.4.1",
