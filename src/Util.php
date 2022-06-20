@@ -14,9 +14,16 @@ function qpdf(...$options): string {
     $previousEoE = sh::$exceptionOnError;
     sh::$exceptionOnError = true;
 
+    if (Phpdf::getSuppressWarnings()) {
+        $options[] = '--no-warn';
+    }
+
     try {
         $result = sh::qpdf(...$options);
     } catch (Throwable $e) {
+        if (Phpdf::getSuppressWarnings() === true && $e->getCode() === 3) {
+            return $e->getMessage();
+        }
         throw new PhpdfException($e->getMessage(), $e->getCode(), $e);
     } finally {
         sh::$exceptionOnError = $previousEoE;
@@ -78,13 +85,40 @@ function getDocData(Phpdf $pdf): ?array {
     }
 }
 
-function checkQpdfDependency(): bool {
+/**
+ * Returns the QPDF version as an integer.
+ * Each versioning number gets inflated by 100, this format comfortably fits all versions up to 999.999.999 within
+ * a 32-bit int.
+ * Version 9.1.1 -> 009 001 001 -> 009001001
+ *
+ * If qpdf is not installed: -1 is returned.
+ * If qpdf appears to be installed but the version could not be determined: 0 is returned.
+ *
+ * @return int
+ */
+function getQpdfVersion(): int {
+    // Can't suppress warning on --version command.
+    $previous = Phpdf::setSuppressWarnings(false);
+
     try {
-        qpdf('--version');
+        $output = qpdf('--version');
     } catch (PhpdfException $e) {
-        return false;
+        return -1;
     }
-    return true;
+    Phpdf::setSuppressWarnings($previous);
+    preg_match('/version (\d+)\.(\d+)\.(\d+)/', $output, $matches);
+
+    if (count($matches) < 4) {
+        return 0;
+    }
+
+    return (int) ($matches[3])
+        + (int) ($matches[2]) * 1000
+        + (int) ($matches[1]) * 1000 * 1000;
+}
+
+function checkQpdfDependency(): bool {
+    return getQpdfVersion() > 0;
 }
 
 function isEncrypted(Phpdf $phpdf): bool {

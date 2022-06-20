@@ -5,38 +5,7 @@ namespace raudius\phpdf;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Error\Warning;
 
-function tmpfile() {
-    if (IOTest::$mockTmpFileFailure) {
-        return false;
-    }
-    return \tmpfile();
-}
-
 class IOTest extends TestCase {
-    public static $mockTmpFileFailure = false;
-
-    public static function tearDownAfterClass() {
-        self::$mockTmpFileFailure = false;
-    }
-    /**
-     * @dataProvider providerValidFiles
-     */
-    public function testTmpfileFailuresFopen(string $filePath): void {
-        // Dont mock the tmpfile function, everything should work as normal.
-        self::$mockTmpFileFailure = false;
-        Phpdf::fopen($filePath);
-        Phpdf::fopen($filePath, true);
-
-        // Start mocking the tmpfile funciton: expect tmpfile failures
-        self::$mockTmpFileFailure = true;
-
-        Phpdf::fopen($filePath, true); // With overwrite parameter should still work :), no tmpfile made.
-
-        $this->expectException(PhpdfException::class);
-        $this->expectExceptionMessage('Could not create temporary file.');
-        Phpdf::fopen($filePath);
-    }
-
     /**
      * @dataProvider providerValidFiles
      */

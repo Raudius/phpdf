@@ -6,7 +6,9 @@ class Phpdf {
     /** @var resource */
     private $file;
     /** @var string|null */
-    private static $tempDirectory;
+    private static $temp_directory;
+    /** @var bool */
+    private static $suppress_warnings = true;
 
     /**
      * @param resource $file
@@ -100,7 +102,7 @@ class Phpdf {
      * @return resource
      */
     private static function createTempFile() {
-        $temp_dir = static::$tempDirectory ?? sys_get_temp_dir();
+        $temp_dir = static::$temp_directory ?? sys_get_temp_dir();
         $filename = tempnam($temp_dir, 'phpdf_');
 
         if (!$filename) {
@@ -115,6 +117,23 @@ class Phpdf {
      * @return void
      */
     public static function setTempDirectory(string $path): void {
-        static::$tempDirectory = $path;
+        static::$temp_directory = $path;
+    }
+
+    /**
+     * @param bool $suppress_warnings
+     * @return bool
+     */
+    public static function setSuppressWarnings(bool $suppress_warnings): bool {
+        $previous = static::$suppress_warnings;
+        static::$suppress_warnings = $suppress_warnings;
+        return $previous;
+    }
+
+    /**
+     * @return bool
+     */
+    public static function getSuppressWarnings(): bool {
+        return static::$suppress_warnings;
     }
 }
