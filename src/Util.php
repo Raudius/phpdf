@@ -21,10 +21,10 @@ function qpdf(...$options): string {
     try {
         $result = sh::qpdf(...$options);
     } catch (Throwable $e) {
-        if (Phpdf::getSuppressWarnings() === true && $e->getCode() === 3) {
-            return $e->getMessage();
+        if (Phpdf::getSuppressWarnings() === false || $e->getCode() !== 3) {
+            throw new PhpdfException($e->getMessage(), $e->getCode(), $e);
         }
-        throw new PhpdfException($e->getMessage(), $e->getCode(), $e);
+        $result = $e->getMessage();
     } finally {
         sh::$exceptionOnError = $previousEoE;
     }
