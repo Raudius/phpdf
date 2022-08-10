@@ -1,13 +1,13 @@
 {
     "name": "raudius/phpdf",
     "description": "Another mediocre PHP library to modify PDFs.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "keywords": ["pdf", "qpdf", "tool"],
     "license": "CC0-1.0",
     "require": {
         "php": "^7.2",
-        "mrrio/shellwrap": "^0.4.1",
-        "ext-json": "*"
+        "ext-json": "*",
+        "mikehaertl/php-shellcommand": "^1.6"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",

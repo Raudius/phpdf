@@ -2,8 +2,10 @@
 
 namespace raudius\phpdf;
 
-use MrRio\ShellWrap as sh;
-use Throwable;
+use mikehaertl\shellcommand\Command;
+
+const QPDF_EXIT_ERROR = 2;
+const QPDF_EXIT_WARNING = 3;
 
 /**
  * @param string ...$options
@@ -11,25 +13,21 @@ use Throwable;
  * @throws PhpdfException
  */
 function qpdf(...$options): string {
-    $previousEoE = sh::$exceptionOnError;
-    sh::$exceptionOnError = true;
-
     if (Phpdf::getSuppressWarnings()) {
         $options[] = '--no-warn';
     }
 
-    try {
-        $result = sh::qpdf(...$options);
-    } catch (Throwable $e) {
-        if (Phpdf::getSuppressWarnings() === false || $e->getCode() !== 3) {
-            throw new PhpdfException($e->getMessage(), $e->getCode(), $e);
-        }
-        $result = $e->getMessage();
-    } finally {
-        sh::$exceptionOnError = $previousEoE;
+    $command = new Command("qpdf");
+    foreach ($options as $option) {
+        $command->addArg($option);
+    }
+    $command->execute();
+
+    if ($command->getExitCode() === QPDF_EXIT_ERROR || (Phpdf::getSuppressWarnings() === false && $command->getExitCode() === QPDF_EXIT_WARNING)) {
+        throw new PhpdfException($command->getStdErr(), $command->getExitCode());
     }
 
-    return trim($result);
+    return trim($command->getOutput());
 }
 
 function pdfStub(): string {
@@ -117,10 +115,22 @@ function getQpdfVersion(): int {
         + (int) ($matches[1]) * 1000 * 1000;
 }
 
+/**
+ * Checks that qpdf is at least version 8.2.0
+ * This version was the first to include the --no-warn flag which is required.
+ *
+ * @return bool
+ */
 function checkQpdfDependency(): bool {
-    return getQpdfVersion() > 0;
+    return getQpdfVersion() > 8002000;
 }
 
+/**
+ * Checks whether a PDF file is encrypted.
+ *
+ * @param Phpdf $phpdf
+ * @return bool
+ */
 function isEncrypted(Phpdf $phpdf): bool {
     try {
         qpdf('--is-encrypted', $phpdf->getPath());
