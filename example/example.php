@@ -1,11 +1,11 @@
 <?php
+
 require_once '../vendor/autoload.php';
 
 use raudius\phpdf\Operations\Decrypt;
 use raudius\phpdf\Operations\Merge;
 use raudius\phpdf\Operations\Overlay;
 use raudius\phpdf\Phpdf;
-
 
 $protected_pdf = Phpdf::fopen('../tests/test_files/password.pdf');
 (new Decrypt('12345'))->execute($protected_pdf)->saveAs('out_decrypted.pdf');
